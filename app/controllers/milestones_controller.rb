@@ -2,9 +2,9 @@ require "advanced_roadmap/gruff/pie" if Object.const_defined?(:Magick)
 
 class MilestonesController < ApplicationController
   menu_item :roadmap
-  before_filter :find_project, :only => [:new, :create]
-  before_filter :find_milestone, :only => [:show, :edit, :update, :destroy]
-  before_filter :authorize, :except => [:show, :total_graph]
+  before_action :find_project, :only => [:new, :create]
+  before_action :find_milestone, :only => [:show, :edit, :update, :destroy]
+  before_action :authorize, :except => [:show, :total_graph]
 
   helper :custom_fields
   helper :projects

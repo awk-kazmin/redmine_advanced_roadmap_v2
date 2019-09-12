@@ -5,7 +5,7 @@ module AdvancedRoadmap
     def self.included(base)
       base.class_eval do
 
-        around_filter :add_milestones, :only => [:show]
+        around_action :add_milestones, :only => [:show]
 
         def add_milestones
           yield

@@ -12,13 +12,15 @@ module AdvancedRoadmap
           calculate_advance_info unless @total_ratio
           @total_ratio
         end
-        alias_method_chain :completed_percent, :advanced_info
+        alias_method :advanced_info, :completed_percent
+        alias_method :completed_percent, :advanced_info
   
         def closed_percent_with_advanced_info
           calculate_advance_info unless @total_finished_ratio
           @total_finished_ratio
         end
-        alias_method_chain :closed_percent, :advanced_info
+        alias_method :advanced_info, :closed_percent
+        alias_method :closed_percent, :advanced_info
   
         def rest_hours
           calculate_advance_info unless @total_pending

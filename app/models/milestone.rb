@@ -9,8 +9,8 @@ class Milestone < ActiveRecord::Base
   validates_uniqueness_of :name, :scope => [:project_id]
   validates_length_of :name, :maximum => 60
   validates :effective_date, :date => true, :allow_nil => true
-
-  attr_accessible :name, :description, :effective_date
+  # TODO: Fix this later. Not for Rails 5.2
+  #attr_accessible :name, :description, :effective_date
 
   def to_s
     name

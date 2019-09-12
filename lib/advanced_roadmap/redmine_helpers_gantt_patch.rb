@@ -19,7 +19,8 @@ module AdvancedRoadmap
           @last_rendered_project = project
           render_version_without_milestones(project, version, options)
         end
-        alias_method_chain :render_version, :milestones
+        alias_method :milestones, :render_version
+        alias_method :render_version, :milestones
 
         def render_milestone(project, milestone, options = {})
           # Milestone header
