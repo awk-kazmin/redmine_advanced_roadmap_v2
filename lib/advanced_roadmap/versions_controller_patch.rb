@@ -15,8 +15,9 @@ module AdvancedRoadmap
           end if params[:only_open]
 
         end
-        alias_method :plugin, :index
-        alias_method :index, :plugin
+        
+        alias_method :index_without_plugin, :index
+        alias_method :index, :index_with_plugin
   
         def show
           @issues = @version.sorted_fixed_issues

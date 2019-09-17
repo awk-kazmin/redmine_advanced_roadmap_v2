@@ -1,4 +1,4 @@
-require "advanced_roadmap/gruff/pie" if Object.const_defined?(:Magick)
+require 'gruff/pie' if Object.const_defined?(:Magick)
 
 class MilestonesController < ApplicationController
   menu_item :roadmap
@@ -100,7 +100,7 @@ class MilestonesController < ApplicationController
   end
 
   def total_graph
-    g = AdvancedRoadmap::Gruff::Pie.new(params[:size] || "500x400")
+    g = Gruff::Pie.new(params[:size] || "500x400")
     g.hide_title = true
     g.theme = graph_theme
     g.margins = 0
@@ -119,6 +119,11 @@ class MilestonesController < ApplicationController
   end
 
 private
+
+  def milestone_params
+    params.require(:milestone).permit(:name, :description, :effective_date)
+  end
+
 
   def find_project
     @project = Project.find(params[:project_id])
