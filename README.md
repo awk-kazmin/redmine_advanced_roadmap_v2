@@ -1,4 +1,4 @@
-Redmine Plugin: Advanced Roadmap v2
+Redmine Plugin: Advanced Roadmap v2 (for redmine 4.+)
 ===========================
 
 This plugin was a fork of Redmine Plugin: [advanced roadmap](https://redmine.ociotec.com/projects/advanced-roadmap), when it was not developed.
